@@ -1,17 +1,23 @@
-(function() {
+(function (root, factory) {
+    if (typeof exports === 'object') {
+        module.exports = factory();
+    } else if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(function () {
+            return (root.returnExportsGlobal = factory());
+        });
+    } else {
+        // Browser globals
+        root.slang = factory();
+    }
+}(this, function () {
     
     // Module Setup
     // -----
     
     // Define the internal slang variable
     var slang = {};
-    
-    // Export the slang object as either a CommonJS module, or to the global object
-    if (typeof module !== 'undefined' && module.exports) {
-        module.exports = slang;
-    } else {
-        this.slang = slang;
-    }
+
     
     // Set the slang version
     slang.version = '0.2.0';
@@ -466,4 +472,5 @@
         'news'
     ];
 
-})();
+    return slang;
+}));
