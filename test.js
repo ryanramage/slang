@@ -36,6 +36,9 @@ assert.equal('camelCase', slang.camelize('camel-case'));
 assert.equal('this-is-dashed', slang.dasherize('this is dashed'));
 assert.equal('this-is-dashed', slang.dasherize('thisIsDashed'));
 
+// Test **slang.undasherize**
+assert.equal('this is dashed', slang.undasherize('this-is-dashed'));
+
 // Test **slang.repeat**
 assert.equal('Ho! Ho! Ho! ', slang.repeat('Ho! ', 3));
 

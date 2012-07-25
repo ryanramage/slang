@@ -62,7 +62,13 @@ Converts a string of words seperated by dashes or spaces to camelCase
 Converts a string of words or a camelCased string into a series of words separated by a dash (`-`)
 
     slang.dasherize('this is dashed'); // "this-is-dashed"
-    
+
+### slang.undasherize
+Replaces the dashes in a dasherized string with spaces. Note, it does not restore any CamelCase.
+
+    slang.undasherize('this-is-dashed'); // "this is dashed"
+
+
 ### slang.repeat
 Concatenates the string `count` times
 
