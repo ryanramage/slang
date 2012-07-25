@@ -87,7 +87,13 @@
                     .replace(/([a-z\d])([A-Z])/g, '$1-$2')
                     .toLowerCase();
     }
-    
+
+    // Replaces the dashes in a dasherized string with spaces. Note, it does not restore any CamelCase.
+    slang.undasherize = function(input) {
+        return input.replace(/-/g, ' ');
+    }
+
+
     // Concatenates the string `count` times
     slang.repeat = function repeat(input, count) {
         return count < 1 ? '' : new Array(count + 1).join(input);
